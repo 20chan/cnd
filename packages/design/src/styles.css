@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --font-main: 'JetBrains Mono', monospace;
+  --color-bg: #f5f3f0;
+  --color-fg: #333;
+  --color-muted: #777;
+
+  --color-black: #0f1214;
+  --color-green: #229f75;
+  --color-red: #ff303e;
+  --color-gray: #9e9e9e;
+
+  --header-height: 3rem;
+  --sidebar-width: 16rem;
+  --layout-padding: 0.5rem;
+}
+
+@layer theme {
+  :root {
+    @variant lg {
+      --header-height: 3.5rem;
+      --layout-padding: 0.75rem;
+    }
+  }
+}
+
+@layer theme {
+  :root {
+    @variants dark {
+      --color-bg: #0f1214;
+      --color-fg: #f5f3f0;
+      --color-muted: #777;
+
+      --color-black: #0f1214;
+      --color-green: #229f75;
+      --color-red: #ff303e;
+      --color-gray: #9e9e9e;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
