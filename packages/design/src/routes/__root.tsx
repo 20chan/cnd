@@ -1,7 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import { RootLayout } from '#/layouts'
+import { Page, RootLayout } from '#/layouts'
 
 import appCss from '../styles.css?url'
 
@@ -16,7 +16,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: '@cnd.sh/design',
       },
     ],
     links: [
@@ -41,7 +41,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             title: '@cnd.sh/design',
           }}
         >
-          {children}
+          <Page>
+            {children}
+          </Page>
         </RootLayout>
 
         <TanStackDevtools

@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import { NavLink } from '#/components';
 import type { LucideIcon } from 'lucide-react'
 import type React from 'react';
 
@@ -14,12 +14,12 @@ export function Header(props: HeaderProps) {
   } = props;
 
   return (
-    <header className="px-2 w-full fixed top-0 z-100 h-(--header-height) bg-bg">
+    <header className="px-(--layout-padding) w-full fixed top-0 z-100 h-(--header-height) bg-bg">
       <div className="h-full flex items-center border-b border-fg">
-        <Link to="/" className="text-2xl font-code font-bold hover:underline">
+        <NavLink to="/" className="text-2xl font-bold">
           {Icon && <Icon size={28} className="inline-block mr-2" />}
           {title}
-        </Link>
+        </NavLink>
       </div>
     </header>
   )

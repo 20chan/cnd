@@ -1,5 +1,5 @@
 import { Header, type HeaderProps } from './Header';
-import { Nav } from './Nav';
+import { SideNav } from './SideNav';
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export function RootLayout({ children, header }: RootLayoutProps) {
 
       <div className='w-full min-h-dvh pt-(--header-height)
         grid grid-rows-1 grid-cols-[var(--sidebar-width)_auto]'>
-        <Nav />
+        <SideNav />
 
         {children}
       </div>
