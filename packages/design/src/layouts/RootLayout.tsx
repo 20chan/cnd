@@ -9,7 +9,7 @@ interface RootLayoutProps {
 
 export function RootLayout({ children, header }: RootLayoutProps) {
   return (
-    <div className='w-screen h-screen overflow-x-hidden'>
+    <div className='isolate w-full'>
       <Header {...header} />
 
       <div className='w-full min-h-dvh pt-(--header-height)

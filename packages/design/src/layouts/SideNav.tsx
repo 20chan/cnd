@@ -83,8 +83,8 @@ export function SideNav(props: SideNavProps) {
   return (
     <nav className='relative col-start-1 row-span-full row-start-1 min-h-full'>
       <div className='absolute inset-0'>
-        <div className='sticky top-(--header-height) left-0 bottom-0 h-[calc(100dvh-var(--header-height))]
-          overflow-y-auto p-(--layout-padding)'>
+        <div className='sticky top-(--header-height) bottom-0 left-0 w-full
+          h-full max-h-[calc(100dvh-var(--header-height))] overflow-y-auto p-(--layout-padding)'>
           {navItems.map((item, index) => <NavItemElement key={index} item={item} pathname={pathname} />)}
         </div>
       </div>

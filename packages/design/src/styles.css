@@ -18,7 +18,9 @@
   --header-height: 3rem;
   --sidebar-width: 16rem;
   --layout-padding: 0.5rem;
-  --layout-gap: 0.5rem;
+  --layout-gap: 0.25rem;
+
+  --scrollbar-padding: 0px;
 }
 
 @layer theme {
@@ -54,13 +56,16 @@ html,
 body,
 #app {
   min-height: 100%;
-}
-
-body {
-  margin: 0;
 
   font-family: var(--font-main);
   background-color: var(--color-bg);
   color: var(--color-fg);
+
+  scrollbar-color: var(--color-muted) var(--color-bg);
+
+}
+
+body {
+  margin: 0;
 }
 
