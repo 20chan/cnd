@@ -9,75 +9,10 @@ type NavItem = {} | {
 }
 
 export interface SideNavProps {
+  items: NavItem[];
 }
 
-const navItems: NavItem[] = [
-  {
-    name: '/',
-    to: '/',
-  },
-  {
-    name: 'about',
-    to: '/about',
-  },
-  {
-    name: 'contact',
-    to: '/contact',
-  },
-  {
-    name: 'service0',
-    items: [
-      {
-        name: 'status',
-        to: '/service0/status',
-      },
-      {
-        name: 'docs',
-        items: [
-          {
-            name: 'simple',
-            to: '/service0/docs/simple',
-          },
-          {
-            name: 'original',
-            to: '/service0/docs',
-          },
-        ],
-      },
-      {
-        name: 'troubleshooting',
-        to: '/service0/troubleshooting',
-      },
-      {
-        name: 'faq',
-        to: '/service0/faq',
-      },
-    ],
-  },
-  {
-    name: 'service1',
-    items: [
-      {
-        name: '/',
-        to: '/service1',
-      },
-      {
-        name: 'users',
-        to: '/service1/users',
-      },
-      {
-        name: 'files',
-        to: '/service1/files',
-      },
-      {
-        name: 'audit_logs',
-        to: '/service1/audit-logs',
-      },
-    ],
-  },
-];
-
-export function SideNav(props: SideNavProps) {
+export function SideNav({ items }: SideNavProps) {
   const { pathname } = useLocation();
 
   return (
@@ -85,7 +20,7 @@ export function SideNav(props: SideNavProps) {
       <div className='absolute inset-0'>
         <div className='sticky top-(--header-height) bottom-0 left-0 w-full
           h-full max-h-[calc(100dvh-var(--header-height))] overflow-y-auto p-(--layout-padding)'>
-          {navItems.map((item, index) => <NavItemElement key={index} item={item} pathname={pathname} />)}
+          {items.map((item, index) => <NavItemElement key={index} item={item} pathname={pathname} />)}
         </div>
       </div>
     </nav>

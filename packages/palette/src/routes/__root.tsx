@@ -40,6 +40,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           header={{
             title: '@cnd.sh/palette',
           }}
+          nav={{
+            items: [
+              { name: '/', to: '/' },
+            ],
+          }}
         >
           <Page>
             {children}

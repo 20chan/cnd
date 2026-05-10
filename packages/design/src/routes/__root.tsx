@@ -40,6 +40,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           header={{
             title: '@cnd.sh/design',
           }}
+          nav={{
+            items: navItems,
+          }}
         >
           <Page>
             {children}
@@ -62,3 +65,69 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     </html>
   )
 }
+
+const navItems = [
+  {
+    name: '/',
+    to: '/',
+  },
+  {
+    name: 'about',
+    to: '/about',
+  },
+  {
+    name: 'contact',
+    to: '/contact',
+  },
+  {
+    name: 'service0',
+    items: [
+      {
+        name: 'status',
+        to: '/service0/status',
+      },
+      {
+        name: 'docs',
+        items: [
+          {
+            name: 'simple',
+            to: '/service0/docs/simple',
+          },
+          {
+            name: 'original',
+            to: '/service0/docs',
+          },
+        ],
+      },
+      {
+        name: 'troubleshooting',
+        to: '/service0/troubleshooting',
+      },
+      {
+        name: 'faq',
+        to: '/service0/faq',
+      },
+    ],
+  },
+  {
+    name: 'service1',
+    items: [
+      {
+        name: '/',
+        to: '/service1',
+      },
+      {
+        name: 'users',
+        to: '/service1/users',
+      },
+      {
+        name: 'files',
+        to: '/service1/files',
+      },
+      {
+        name: 'audit_logs',
+        to: '/service1/audit-logs',
+      },
+    ],
+  },
+];
