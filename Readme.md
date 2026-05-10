@@ -1,6 +1,6 @@
 # @cnd.sh/*
 
-personal libraries for eco systems
+shared libraries for personal ecosystem
 
 ## packages
 
