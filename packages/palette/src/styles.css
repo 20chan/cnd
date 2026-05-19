@@ -1,4 +1,5 @@
-@import "@cnd.sh/design/styles.css";
+/* @import "../node_modules/@cnd.sh/design/build/styles.css"; */
+@import "../design/src/styles.css";
 
 @source "../node_modules/@cnd.sh/design/build/";
 
