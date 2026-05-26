@@ -5,7 +5,9 @@
   "imports": {
     "#/*": "./src/*"
   },
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "module": "./build/index.js",
@@ -37,7 +39,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "bundle": "tsc -p tsconfig.build.json && cp src/styles.css build/styles.css"
+    "bundle": "tsc -p tsconfig.build.json && cp src/styles.css build/styles.css",
+    "fix": "biome check --write --unsafe .",
+    "lint": "biome check ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",

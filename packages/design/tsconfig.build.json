@@ -4,16 +4,9 @@
     "outDir": "build",
     "rootDir": "src",
     "paths": {
-      "#/*": ["./src/*"],
-    },
+      "#/*": ["./src/*"]
+    }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-  ],
-  "exclude": [
-    "src/routes/",
-    "src/router.*",
-    "src/routeTree.gen.*",
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/routes/", "src/router.*", "src/routeTree.gen.*"]
 }

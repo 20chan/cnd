@@ -8,7 +8,7 @@
     "noEmit": true,
     "paths": {
       "#/*": ["./src/*"]
-    },
+    }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.css"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.css"]
 }

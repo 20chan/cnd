@@ -1,33 +1,38 @@
-import { darkScheme, defaultScheme, type Scheme } from '#/lib/scheme'
-import { cn } from '@cnd.sh/design/utils'
-import { createFileRoute } from '@tanstack/react-router'
-import Color from 'color'
-import { useEffect, useState } from 'react'
+import { cn } from '@cnd.sh/design/utils';
+import { createFileRoute } from '@tanstack/react-router';
+import Color from 'color';
+import { useEffect, useState } from 'react';
+import { darkScheme, defaultScheme, type Scheme } from '#/lib/scheme';
 
-export const Route = createFileRoute('/')({ component: Home })
+export const Route = createFileRoute('/')({ component: Home });
 
 function Home() {
   const [scheme, setScheme] = useState<Scheme>(darkScheme);
 
   useEffect(() => {
-    const current = window.document.documentElement.getAttribute('data-theme') === 'dark' ? darkScheme : defaultScheme;
+    const current =
+      window.document.documentElement.getAttribute('data-theme') === 'dark'
+        ? darkScheme
+        : defaultScheme;
     setScheme(current);
   }, []);
 
   const desc = (name: string) => {
     if (name === 'white') {
-      return ' (bg)'
+      return ' (bg)';
     } else if (name === 'brightWhite') {
-      return ' (bg)'
+      return ' (bg)';
     } else if (name === 'black') {
-      return ' (fg)'
+      return ' (fg)';
     } else if (name === 'brightBlack') {
-      return ' (fg)'
+      return ' (fg)';
     }
-  }
+  };
 
-  const whiteLike = scheme.black === defaultScheme.black ? scheme.white : scheme.black
-  const blackLike = scheme.white === defaultScheme.white ? scheme.black : scheme.white
+  const whiteLike =
+    scheme.black === defaultScheme.black ? scheme.white : scheme.black;
+  const blackLike =
+    scheme.white === defaultScheme.white ? scheme.black : scheme.white;
 
   return (
     <div className="grid grid-rows-1 grid-cols-[26rem_auto]">
@@ -41,7 +46,10 @@ function Home() {
               color: Color(color).isLight() ? blackLike : whiteLike,
             }}
           >
-            <div>{name}{desc(name)}</div>
+            <div>
+              {name}
+              {desc(name)}
+            </div>
             <div className="text-sm">{color}</div>
           </div>
         ))}
@@ -49,19 +57,19 @@ function Home() {
 
       <div>
         {Object.entries(scheme).map(([name, color]) => {
-          const hsl = Color(color).hsl()
-          const isWhite = name === 'white' || name === 'brightWhite'
+          const hsl = Color(color).hsl();
+          const isWhite = name === 'white' || name === 'brightWhite';
           const isBackground =
             name.startsWith('bright') &&
             name !== 'brightBlack' &&
-            name !== 'brightWhite'
+            name !== 'brightWhite';
 
-          const textColor = (isBackground || isWhite) ? whiteLike : color;
+          const textColor = isBackground || isWhite ? whiteLike : color;
           // const textColor = isBackground || isWhite ? scheme.white : color
-          const bgColor = isBackground ? color : 'transparent'
+          const bgColor = isBackground ? color : 'transparent';
 
-          const whiteContrast = hsl.contrast(Color(whiteLike))
-          const blackContrast = hsl.contrast(Color(blackLike))
+          const whiteContrast = hsl.contrast(Color(whiteLike));
+          const blackContrast = hsl.contrast(Color(blackLike));
 
           return (
             <div key={name}>
@@ -69,7 +77,8 @@ function Home() {
                 style={{ color: textColor, backgroundColor: bgColor }}
                 className="inline-block w-40"
               >
-                {name}{desc(name)}
+                {name}
+                {desc(name)}
               </span>
               <span
                 style={{ color: textColor, backgroundColor: bgColor }}
@@ -84,8 +93,8 @@ function Home() {
                 value={hsl.hue()}
                 className="w-60"
                 onChange={(e) => {
-                  const newColor = hsl.hue(Number(e.target.value)).hex()
-                  setScheme((prev) => ({ ...prev, [name]: newColor }))
+                  const newColor = hsl.hue(Number(e.target.value)).hex();
+                  setScheme((prev) => ({ ...prev, [name]: newColor }));
                 }}
               />
               <span className="inline-block w-12 mr-2 text-right">
@@ -98,8 +107,10 @@ function Home() {
                 value={hsl.saturationl()}
                 className="w-60"
                 onChange={(e) => {
-                  const newColor = hsl.saturationl(Number(e.target.value)).hex()
-                  setScheme((prev) => ({ ...prev, [name]: newColor }))
+                  const newColor = hsl
+                    .saturationl(Number(e.target.value))
+                    .hex();
+                  setScheme((prev) => ({ ...prev, [name]: newColor }));
                 }}
               />
               <span className="inline-block w-10 mr-2 text-right">
@@ -112,8 +123,8 @@ function Home() {
                 value={hsl.lightness()}
                 className="w-60"
                 onChange={(e) => {
-                  const newColor = hsl.lightness(Number(e.target.value)).hex()
-                  setScheme((prev) => ({ ...prev, [name]: newColor }))
+                  const newColor = hsl.lightness(Number(e.target.value)).hex();
+                  setScheme((prev) => ({ ...prev, [name]: newColor }));
                 }}
               />
               <span className="inline-block w-10 ml-2 text-right">
@@ -145,9 +156,9 @@ function Home() {
                 {blackContrast.toFixed(1)}
               </span>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }

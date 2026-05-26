@@ -210,7 +210,7 @@ export default function Services() {
           innerUrl: ':6380',
           stack: 'docker',
         },
-      ]
+      ],
     },
     {
       name: 'discord-bot-alice',
@@ -278,81 +278,97 @@ export default function Services() {
   ];
 
   return (
-    <div className=''>
-      <div className='flex flex-col gap-2'>
+    <div className="">
+      <div className="flex flex-col gap-2">
         <ServiceList name="Infrastructure" items={infras} />
         <ServiceList name="Services" items={services} />
         <ServiceList name="Games" items={games} />
       </div>
     </div>
-  )
+  );
 }
 
-function ServiceList({ name, items }: { name: string, items: Item[] }) {
+function ServiceList({ name, items }: { name: string; items: Item[] }) {
   return (
     <div className="">
-      <h2 className="font-bold border-b border-fg mb-0.5 uppercase">
-        {name}
-      </h2>
+      <h2 className="font-bold border-b border-fg mb-0.5 uppercase">{name}</h2>
 
       {items.map(ServiceCard)}
     </div>
   );
 }
 
-function ServiceCard({ name, shortName, url, innerUrl, repo, stack, isPrivate, isDeprecated, subItems }: Item) {
-  const icon = ((isPrivate || url === undefined)
-    ? <Lock size={12} className='inline-block mr-1' />
-    : <Link1 size={12} className='inline-block mr-1' />
-  );
+function ServiceCard({
+  name,
+  shortName,
+  url,
+  innerUrl,
+  repo,
+  stack,
+  isPrivate,
+  isDeprecated,
+  subItems,
+}: Item) {
+  const icon =
+    isPrivate || url === undefined ? (
+      <Lock size={12} className="inline-block mr-1" />
+    ) : (
+      <Link1 size={12} className="inline-block mr-1" />
+    );
 
   const nameInner = (
     <>
-      <div className='hidden lg:block'>
-        {icon}{name}
+      <div className="hidden lg:block">
+        {icon}
+        {name}
       </div>
-      <div className='lg:hidden'>
-        {icon}{shortName ?? name}
+      <div className="lg:hidden">
+        {icon}
+        {shortName ?? name}
       </div>
     </>
-  )
-
-  const nameElement = (url != undefined
-    ? <Link to={url} className="hover:underline">{nameInner}</Link>
-    : <span>{nameInner}</span>
   );
 
-  const repoElement = (repo !== undefined
-    ? <Link to={repo} className="text-sm text-muted hover:underline ml-2">
+  const nameElement =
+    url !== undefined ? (
+      <Link to={url} className="hover:underline">
+        {nameInner}
+      </Link>
+    ) : (
+      <span>{nameInner}</span>
+    );
+
+  const repoElement =
+    repo !== undefined ? (
+      <Link to={repo} className="text-sm text-muted hover:underline ml-2">
         <Github size={14} className="inline-block" />
       </Link>
-    : null
-  );
+    ) : null;
 
   const inner = (
-    <div className='flex flex-row hover:bg-fg/10'>
-      <div className={`flex-1 text-sm lg:text-base ${isDeprecated ? 'line-through text-muted' : ''}`}>
+    <div className="flex flex-row hover:bg-fg/10">
+      <div
+        className={`flex-1 text-sm lg:text-base ${isDeprecated ? 'line-through text-muted' : ''}`}
+      >
         {nameElement}
       </div>
 
-      <div className='basis-4 lg:basis-16'>
-        {repoElement}
+      <div className="basis-4 lg:basis-16">{repoElement}</div>
+
+      <div className="basis-16 lg:basis-20">
+        {innerUrl && (
+          <span className="text-sm text-muted ml-2">{innerUrl}</span>
+        )}
       </div>
 
-      <div className='basis-16 lg:basis-20'>
-        {innerUrl && (<span className='text-sm text-muted ml-2'>{innerUrl}</span>)}
-      </div>
-
-      <div className='basis-16 lg:basis-24 text-xs leading-6 lg:text-sm text-muted'>
+      <div className="basis-16 lg:basis-24 text-xs leading-6 lg:text-sm text-muted">
         {stack}
       </div>
     </div>
   );
 
   const subItemElements = subItems?.length ? (
-    <div className="ml-4 text-muted">
-      {subItems.map(ServiceCard)}
-    </div>
+    <div className="ml-4 text-muted">{subItems.map(ServiceCard)}</div>
   ) : null;
 
   return (
@@ -360,5 +376,5 @@ function ServiceCard({ name, shortName, url, innerUrl, repo, stack, isPrivate, i
       {inner}
       {subItemElements}
     </div>
-  )
+  );
 }

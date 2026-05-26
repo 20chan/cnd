@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
 @import "tailwindcss";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-  --font-main: 'JetBrains Mono', monospace;
+  --font-main: "JetBrains Mono", monospace;
 
   --color-bg: #ece8e2;
   --color-fg: #1f1d1a;
@@ -16,10 +16,10 @@
 
   --color-red: #a93e41;
   --color-green: #247424;
-  --color-yellow: #6F6C1B;
-  --color-blue: #3B6399;
+  --color-yellow: #6f6c1b;
+  --color-blue: #3b6399;
   --color-magenta: #654988;
-  --color-cyan: #306A69;
+  --color-cyan: #306a69;
 
   --color-bright-red: #e0a8a9;
   --color-bright-green: #5fcd5f;
@@ -47,11 +47,11 @@
 }
 
 @variant dark {
-  --color-bg: #4f4c46;
+  --color-bg: #2a2926;
   --color-fg: #ece8e4;
   --color-muted: #777;
 
-  --color-white: #4f4c46;
+  --color-white: #2a2926;
   --color-black: #ece8e4;
 
   --color-black: #0f1214;
@@ -62,7 +62,7 @@
 
 @layer theme {
   :root {
-    @variants dark {
+    @variant dark {
     }
   }
 }
@@ -81,10 +81,8 @@ body,
   color: var(--color-fg);
 
   scrollbar-color: var(--color-muted) var(--color-bg);
-
 }
 
 body {
   margin: 0;
 }
-

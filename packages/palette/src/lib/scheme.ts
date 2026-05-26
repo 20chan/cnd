@@ -50,11 +50,11 @@ export const defaultScheme: Scheme = {
 
   cyan: '#306A69',
   brightCyan: '#82c8c7',
-}
+};
 
 export const darkScheme: Scheme = {
-  white: '#4f4c46',
-  brightWhite: '#4f4c46',
+  white: '#2a2926',
+  brightWhite: '#2a2926',
 
   black: '#ece8e4',
   brightBlack: '#9f9891',
@@ -76,4 +76,4 @@ export const darkScheme: Scheme = {
 
   cyan: '#82c8c7',
   brightCyan: '#306A69',
-}
+};

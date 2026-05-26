@@ -1,8 +1,7 @@
-
-import React from 'react';
-import { createServerFn, useServerFn } from '@tanstack/react-start';
 import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
+import { createServerFn, useServerFn } from '@tanstack/react-start';
+import React from 'react';
 
 const getServerUptime = createServerFn({
   method: 'GET',
@@ -16,7 +15,9 @@ const getServerMemory = createServerFn({
   method: 'GET',
 }).handler(async () => {
   const execAsync = promisify(exec);
-  const { stdout } = await execAsync('free -h | awk \'FNR == 2 { print $3, $2 }\'');
+  const { stdout } = await execAsync(
+    "free -h | awk 'FNR == 2 { print $3, $2 }'",
+  );
   const [used, total] = stdout.trim().split(' ');
   return { used, total };
 });
@@ -51,34 +52,28 @@ export default function Systems() {
   }, [getUptime, getMemory]);
 
   return (
-    <div className=''>
-      <h2 className='font-bold border-b border-fg mb-0.5 uppercase'>
-        fetch
-      </h2>
+    <div className="">
+      <h2 className="font-bold border-b border-fg mb-0.5 uppercase">fetch</h2>
 
       <div>
-        <Item name='OS' value='Ubuntu 24.04.2 LTS x86_64' />
-        <Item name='Kernel' value='Linux 6.8.0-84-generic' />
-        <Item name='Uptime' value={uptime} />
-        <Item name='Shell' value='zsh 5.9' />
-        <Item name='Host' value='B850 Pro RS' />
-        <Item name='CPU' value='AMD Ryzen 9 7950X3D' />
-        <Item name='GPU' value='NVIDIA GeForce GTX 960' />
-        <Item name='Memory' value={memory} />
+        <Item name="OS" value="Ubuntu 24.04.2 LTS x86_64" />
+        <Item name="Kernel" value="Linux 6.8.0-84-generic" />
+        <Item name="Uptime" value={uptime} />
+        <Item name="Shell" value="zsh 5.9" />
+        <Item name="Host" value="B850 Pro RS" />
+        <Item name="CPU" value="AMD Ryzen 9 7950X3D" />
+        <Item name="GPU" value="NVIDIA GeForce GTX 960" />
+        <Item name="Memory" value={memory} />
       </div>
     </div>
-  )
+  );
 }
 
-function Item({ name, value }: { name: string, value: React.ReactNode }) {
+function Item({ name, value }: { name: string; value: React.ReactNode }) {
   return (
-    <div className='text-sm lg:text-base flex flex-row'>
-      <div className='w-28 text-fg-red'>
-        {name}:
-      </div>
-      <div className=''>
-        {value}
-      </div>
+    <div className="text-sm lg:text-base flex flex-row">
+      <div className="w-28 text-fg-red">{name}:</div>
+      <div className="">{value}</div>
     </div>
-  )
+  );
 }

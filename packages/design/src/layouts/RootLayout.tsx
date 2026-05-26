@@ -11,16 +11,19 @@ interface RootLayoutProps {
 
 export function RootLayout({ children, header, nav }: RootLayoutProps) {
   return (
-    <div className='isolate w-full'>
+    <div className="isolate w-full">
       <Header {...header} />
 
-      <div className={cn('w-full min-h-dvh pt-(--header-height)',
-        nav && 'grid grid-rows-1 grid-cols-[var(--sidebar-width)_auto]')}>
-
+      <div
+        className={cn(
+          'w-full min-h-dvh pt-(--header-height)',
+          nav && 'grid grid-rows-1 grid-cols-[var(--sidebar-width)_auto]',
+        )}
+      >
         {nav && <SideNav {...nav} />}
 
         {children}
       </div>
     </div>
-  )
+  );
 }

@@ -1,9 +1,8 @@
 /* @import "../node_modules/@cnd.sh/design/build/styles.css"; */
 @import "../design/src/styles.css";
+@import "tailwindcss";
 
 @source "../node_modules/@cnd.sh/design/build/";
-
-@import "tailwindcss";
 
 * {
   box-sizing: border-box;
@@ -20,5 +19,14 @@ body {
 }
 
 @theme {
-  --background-image-hue: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 16.666%, rgb(0, 255, 0) 33.333%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 66.666%, rgb(255, 0, 255) 83.333%, rgb(255, 0, 0) 100%);
+  --background-image-hue: linear-gradient(
+    to right,
+    rgb(255, 0, 0) 0%,
+    rgb(255, 255, 0) 16.666%,
+    rgb(0, 255, 0) 33.333%,
+    rgb(0, 255, 255) 50%,
+    rgb(0, 0, 255) 66.666%,
+    rgb(255, 0, 255) 83.333%,
+    rgb(255, 0, 0) 100%
+  );
 }

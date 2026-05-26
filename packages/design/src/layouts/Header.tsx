@@ -1,17 +1,14 @@
-import { NavLink } from '#/components';
-import type { LucideIcon } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react';
 import type React from 'react';
+import { NavLink } from '#/components';
 
 export interface HeaderProps {
   Icon?: LucideIcon;
   title: React.ReactNode;
-};
+}
 
 export function Header(props: HeaderProps) {
-  const {
-    Icon,
-    title,
-  } = props;
+  const { Icon, title } = props;
 
   return (
     <header className="px-(--layout-padding) w-full fixed top-0 z-100 h-(--header-height) bg-bg">
@@ -22,5 +19,5 @@ export function Header(props: HeaderProps) {
         </NavLink>
       </div>
     </header>
-  )
+  );
 }

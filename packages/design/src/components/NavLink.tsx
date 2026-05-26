@@ -1,5 +1,5 @@
-import { cn } from '#/utils';
 import { Link, type LinkComponentProps } from '@tanstack/react-router';
+import { cn } from '#/utils';
 
 export type NavLinkKind = 'none' | 'underline' | 'bold' | 'background';
 
@@ -15,23 +15,21 @@ export function NavLink(props: NavLinkProps) {
   const kind: NavLinkKind = kind0 ?? 'underline';
 
   const cls = cn(
-    kind === 'underline' && cn({
-      'hover:underline': !navigated,
-      'underline': navigated,
-    }),
-    kind === 'bold' && cn({
-      'font-bold': navigated,
-    }),
-    kind === 'background' && cn({
-      'bg-fg/10': navigated,
-    }),
+    kind === 'underline' &&
+      cn({
+        'hover:underline': !navigated,
+        underline: navigated,
+      }),
+    kind === 'bold' &&
+      cn({
+        'font-bold': navigated,
+      }),
+    kind === 'background' &&
+      cn({
+        'bg-fg/10': navigated,
+      }),
     className,
   );
 
-  return (
-    <Link
-      {...rest}
-      className={cls}
-    />
-  )
+  return <Link {...rest} className={cls} />;
 }
