@@ -7,11 +7,11 @@
 @theme {
   --font-main: "JetBrains Mono", monospace;
 
-  --color-bg: #ece8e2;
+  --color-bg: #e7e2db;
   --color-fg: #1f1d1a;
   --color-muted: #837d73;
 
-  --color-white: #ece8e2;
+  --color-white: #e7e2db;
   --color-black: #232320;
 
   --color-red: #a93e41;
@@ -47,11 +47,11 @@
 }
 
 @variant dark {
-  --color-bg: #2a2926;
+  --color-bg: #272420;
   --color-fg: #ece8e4;
   --color-muted: #777;
 
-  --color-white: #2a2926;
+  --color-white: #272420;
   --color-black: #ece8e4;
 
   --color-black: #0f1214;

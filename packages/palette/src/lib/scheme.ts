@@ -27,8 +27,8 @@ export interface Scheme {
 }
 
 export const defaultScheme: Scheme = {
-  white: '#ece8e2',
-  brightWhite: '#ece8e2',
+  white: '#e7e2db',
+  brightWhite: '#e7e2db',
 
   black: '#232320',
   brightBlack: '#837d73',
@@ -53,8 +53,8 @@ export const defaultScheme: Scheme = {
 };
 
 export const darkScheme: Scheme = {
-  white: '#2a2926',
-  brightWhite: '#2a2926',
+  white: '#272420',
+  brightWhite: '#272420',
 
   black: '#ece8e4',
   brightBlack: '#9f9891',
