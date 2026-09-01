@@ -54,12 +54,12 @@ export const defaultScheme: Scheme = {
 
 export const darkScheme: Scheme = {
   white: '#272420',
-  brightWhite: '#272420',
+  brightWhite: '#48443d',
 
-  black: '#ece8e4',
+  black: '#d9d0c7',
   brightBlack: '#9f9891',
 
-  red: '#e2b1b2',
+  red: '#ef9fa1',
   brightRed: '#a93e41',
 
   green: '#85ce85',
