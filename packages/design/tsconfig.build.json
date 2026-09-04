@@ -1,11 +1,12 @@
 {
   "extends": "../typescript/tsconfig.react.json",
   "compilerOptions": {
-    "outDir": "build",
+    "outDir": "dist",
     "rootDir": "src",
     "paths": {
       "#/*": ["./src/*"]
-    }
+    },
+    "esModuleInterop": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["src/routes/", "src/router.*", "src/routeTree.gen.*"]
