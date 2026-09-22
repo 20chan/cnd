@@ -32,7 +32,8 @@
       "import": "./dist/utils/index.js",
       "default": "./dist/utils/index.js"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css",
+    "./src": "./src/index.ts"
   },
   "scripts": {
     "dev": "vite dev --port 3000",

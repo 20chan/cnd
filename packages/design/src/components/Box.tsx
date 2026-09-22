@@ -13,14 +13,17 @@ export namespace Box {
   export function Header({
     title,
     uppercase,
+    className,
   }: {
     title: React.ReactNode;
     uppercase?: boolean;
+    className?: string;
   }) {
     return (
       <div
         className={cn(
-          `font-bold border-b border-fg mb-0.5 ${uppercase ? 'uppercase' : ''}`,
+          `font-bold border-b border-muted mb-0.5 ${uppercase ? 'uppercase' : ''}`,
+          className,
         )}
       >
         {title}

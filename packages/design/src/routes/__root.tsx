@@ -1,7 +1,7 @@
 import { TanStackDevtools } from '@tanstack/react-devtools';
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
-import { Page, RootLayout } from '#/layouts';
+import { type NavItem, Page, RootLayout } from '#/layouts';
 
 import appCss from '../styles.css?url';
 
@@ -64,7 +64,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   );
 }
 
-const navItems = [
+const navItems: NavItem[] = [
   {
     name: '/',
     to: '/',
@@ -128,4 +128,5 @@ const navItems = [
       },
     ],
   },
-];
+  // biome-ignore lint/suspicious/noExplicitAny: demo
+] as any;

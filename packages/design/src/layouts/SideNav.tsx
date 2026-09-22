@@ -2,13 +2,11 @@ import { useLocation } from '@tanstack/react-router';
 import { NavLink, type NavLinkTo } from '#/components';
 import { cn } from '#/utils';
 
-type NavItem =
-  | {}
-  | {
-      name: string;
-      to?: NavLinkTo;
-      items?: NavItem[];
-    };
+export type NavItem = {
+  name: string;
+  to?: NavLinkTo;
+  items?: NavItem[];
+};
 
 export interface SideNavProps {
   items: NavItem[];
@@ -21,12 +19,12 @@ export function SideNav({ items }: SideNavProps) {
     <nav className="relative col-start-1 row-span-full row-start-1 min-h-full">
       <div className="absolute inset-0">
         <div
-          className="sticky top-(--header-height) bottom-0 left-0 w-full
+          className="sticky top-(--header-height) bottom-0 left-0 w-full border-r border-muted h-content-screen
           h-full max-h-[calc(100dvh-var(--header-height))] overflow-y-auto p-(--layout-padding)"
         >
           {items.map((item, index) => (
             <NavItemElement
-              key={`nav-${index}`}
+              key={`nav-${item.name}-${item.to}`}
               item={item}
               pathname={pathname}
             />
@@ -55,7 +53,7 @@ function NavItemElement({
     <div className="pl-(--layout-gap)">
       {items.map((item, index) => (
         <NavItemElement
-          key={index}
+          key={`nav-${item.name}-${item.to}`}
           item={item}
           pathname={pathname}
           depth={depth + 1}
