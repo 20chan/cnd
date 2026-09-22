@@ -1,0 +1,19 @@
+/* @import "../node_modules/@cnd.sh/design/build/styles.css"; */
+@import "../../design/src/styles.css";
+@import "tailwindcss";
+
+@source "../node_modules/@cnd.sh/design/build/";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
