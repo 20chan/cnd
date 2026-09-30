@@ -1,7 +1,7 @@
 import '@tanstack/react-start/server-only';
 
-import type { WalletTransaction } from '../wallet';
-import { TOOLBELT_URL } from './config';
+import { TOOLBELT_URL } from '../config';
+import type { WalletTransaction } from '../dtos/wallet';
 
 export async function fetchWallet(): Promise<WalletTransaction[]> {
   const url = `${TOOLBELT_URL}/api/wallet`;

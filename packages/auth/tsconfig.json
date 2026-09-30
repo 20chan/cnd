@@ -1,0 +1,10 @@
+{
+  "extends": "../typescript/tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.css"]
+}

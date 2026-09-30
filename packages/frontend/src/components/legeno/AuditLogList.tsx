@@ -1,5 +1,5 @@
-import { formateDateFullTime, formateDateShortTime } from '#/lib/dates';
-import type { LegenoAuditLog } from '#/lib/legeno';
+import type { LegenoAuditLog } from '#/lib/dtos';
+import { formateDateFullTime } from '#/lib/utils';
 
 export interface AuditLogListProps {
   auditLogs: LegenoAuditLog[];

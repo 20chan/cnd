@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ServiceList } from '#/components/ServiceList';
 import {
   healthQueryOptions,
   servicesQueryOptions,
-} from '#/components/services.query';
+} from '#/components/queries/service.query';
+import { ServiceList } from '#/components/ServiceList';
 
 export const Route = createFileRoute('/')({
   component: Home,

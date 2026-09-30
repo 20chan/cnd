@@ -14,6 +14,7 @@
     "lint": "biome check ."
   },
   "dependencies": {
+    "@cnd.sh/auth": "workspace:*",
     "@cnd.sh/design": "workspace:*",
     "@faker-js/faker": "^10.3.0",
     "@icons-pack/react-simple-icons": "^13.15.1",

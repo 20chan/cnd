@@ -1,4 +1,4 @@
-import { Box, cn } from '@cnd.sh/design';
+import { cn } from '@cnd.sh/design';
 import { SiGithub } from '@icons-pack/react-simple-icons';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { Link } from '@tanstack/react-router';
@@ -11,8 +11,8 @@ import {
   Lock,
 } from 'lucide-react';
 import * as R from 'remeda';
-import type { Service } from '#/lib';
-import { healthQueryOptions } from './services.query';
+import type { Service } from '#/lib/dtos';
+import { healthQueryOptions } from './queries/service.query';
 
 export interface ServiceListProps {
   services: Service[];

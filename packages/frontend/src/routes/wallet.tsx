@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import * as R from 'remeda';
-import { walletQueryOptions } from '#/components/wallet.query';
+import { walletQueryOptions } from '#/components/queries/wallet.query';
 
 export const Route = createFileRoute('/wallet')({
   component: RouteComponent,

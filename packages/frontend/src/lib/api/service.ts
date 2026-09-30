@@ -1,7 +1,7 @@
 import '@tanstack/react-start/server-only';
 
-import type { Service } from '../services';
-import { TOOLBELT_URL } from './config';
+import { TOOLBELT_URL } from '../config';
+import type { Service } from '../dtos/service';
 
 export async function fetchServices(): Promise<Service[]> {
   const url = `${TOOLBELT_URL}/api/service`;

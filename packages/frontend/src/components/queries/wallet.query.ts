@@ -1,6 +1,6 @@
 import { queryOptions } from '@tanstack/react-query';
 import { createServerFn } from '@tanstack/react-start';
-import { fetchWallet } from '#/lib/api/wallet';
+import { fetchWallet } from '#/lib/api';
 
 const getWallet = createServerFn().handler(async () => {
   return await fetchWallet();

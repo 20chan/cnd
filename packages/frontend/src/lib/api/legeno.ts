@@ -1,7 +1,7 @@
 import '@tanstack/react-start/server-only';
 
-import type { LegenoAuditLog, LegenoUser } from '../legeno';
-import { LEGENO_KEY, LEGENO_URL } from './config';
+import { LEGENO_KEY, LEGENO_URL } from '../config';
+import type { LegenoAuditLog, LegenoUser } from '../dtos/legeno';
 
 async function fetchLegeno<T>(endpoint: string) {
   const resp = await fetch(`${LEGENO_URL}${endpoint}`, {

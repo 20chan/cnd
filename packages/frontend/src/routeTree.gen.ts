@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LegenoRouteImport } from './routes/legeno'
 import { Route as WalletRouteImport } from './routes/wallet'
+import { Route as ApiAuthCallbackRouteImport } from './routes/api/auth/callback'
+import { Route as ApiAuthLoginRouteImport } from './routes/api/auth/login'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +30,64 @@ const WalletRoute = WalletRouteImport.update({
   path: '/wallet',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAuthCallbackRoute = ApiAuthCallbackRouteImport.update({
+  id: '/api/auth/callback',
+  path: '/api/auth/callback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAuthLoginRoute = ApiAuthLoginRouteImport.update({
+  id: '/api/auth/login',
+  path: '/api/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/legeno': typeof LegenoRoute
   '/wallet': typeof WalletRoute
+  '/api/auth/callback': typeof ApiAuthCallbackRoute
+  '/api/auth/login': typeof ApiAuthLoginRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/legeno': typeof LegenoRoute
   '/wallet': typeof WalletRoute
+  '/api/auth/callback': typeof ApiAuthCallbackRoute
+  '/api/auth/login': typeof ApiAuthLoginRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/legeno': typeof LegenoRoute
   '/wallet': typeof WalletRoute
+  '/api/auth/callback': typeof ApiAuthCallbackRoute
+  '/api/auth/login': typeof ApiAuthLoginRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/legeno' | '/wallet'
+  fullPaths:
+    | '/'
+    | '/legeno'
+    | '/wallet'
+    | '/api/auth/callback'
+    | '/api/auth/login'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/legeno' | '/wallet'
-  id: '__root__' | '/' | '/legeno' | '/wallet'
+  to: '/' | '/legeno' | '/wallet' | '/api/auth/callback' | '/api/auth/login'
+  id:
+    | '__root__'
+    | '/'
+    | '/legeno'
+    | '/wallet'
+    | '/api/auth/callback'
+    | '/api/auth/login'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LegenoRoute: typeof LegenoRoute
   WalletRoute: typeof WalletRoute
+  ApiAuthCallbackRoute: typeof ApiAuthCallbackRoute
+  ApiAuthLoginRoute: typeof ApiAuthLoginRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +113,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WalletRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/auth/callback': {
+      id: '/api/auth/callback'
+      path: '/api/auth/callback'
+      fullPath: '/api/auth/callback'
+      preLoaderRoute: typeof ApiAuthCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/auth/login': {
+      id: '/api/auth/login'
+      path: '/api/auth/login'
+      fullPath: '/api/auth/login'
+      preLoaderRoute: typeof ApiAuthLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +134,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LegenoRoute: LegenoRoute,
   WalletRoute: WalletRoute,
+  ApiAuthCallbackRoute: ApiAuthCallbackRoute,
+  ApiAuthLoginRoute: ApiAuthLoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

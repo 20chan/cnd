@@ -1,5 +1,5 @@
-import { formateDateFullTime, formateDateShortTime } from '#/lib/dates';
-import type { LegenoUser } from '#/lib/legeno';
+import type { LegenoUser } from '#/lib/dtos';
+import { formateDateFullTime, formateDateShortTime } from '#/lib/utils';
 
 export interface UserListProps {
   users: LegenoUser[];

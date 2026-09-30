@@ -22,7 +22,7 @@ export function SideNav({ items }: SideNavProps) {
           className="sticky top-(--header-height) bottom-0 left-0 w-full border-r border-muted h-content-screen
           h-full max-h-[calc(100dvh-var(--header-height))] overflow-y-auto p-(--layout-padding)"
         >
-          {items.map((item, index) => (
+          {items.map((item, _index) => (
             <NavItemElement
               key={`nav-${item.name}-${item.to}`}
               item={item}
@@ -51,7 +51,7 @@ function NavItemElement({
   const items = item.items ?? [];
   const itemsElement = items.length > 0 && (
     <div className="pl-(--layout-gap)">
-      {items.map((item, index) => (
+      {items.map((item, _index) => (
         <NavItemElement
           key={`nav-${item.name}-${item.to}`}
           item={item}

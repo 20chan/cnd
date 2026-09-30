@@ -9,6 +9,7 @@ import {
 } from '@tanstack/react-router';
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { Terminal } from 'lucide-react';
+import { requireAuthServer } from '#/lib/auth.functions';
 import { navs } from '#/lib/navs';
 import appCss from '../styles.css?url';
 
@@ -36,6 +37,12 @@ export const Route = createRootRouteWithContext<{
     ],
   }),
   shellComponent: RootDocument,
+  beforeLoad: async (req) => {
+    const authState = await requireAuthServer({
+      data: { redirectUrl: req.location.pathname },
+    });
+    return { authState };
+  },
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {

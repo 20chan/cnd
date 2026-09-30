@@ -3,7 +3,7 @@ import { AuditLogList, UserList } from '#/components/legeno';
 import {
   legenoAuditLogQueryOptions,
   legenoUsersQueryOptions,
-} from '#/components/legeno.query';
+} from '#/components/queries/legeno.query';
 
 export const Route = createFileRoute('/legeno')({
   component: RouteComponent,
