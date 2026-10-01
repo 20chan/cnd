@@ -1,5 +1,5 @@
 import type React from 'react';
-import { cn } from '#/utils';
+import { cn } from '../utils';
 
 export function Box({ children }: Box.Props) {
   return <div className="p-2 border border-fg">{children}</div>;

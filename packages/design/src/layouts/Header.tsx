@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import type React from 'react';
-import { NavLink } from '#/components';
+import { NavLink } from '../components';
 
 export interface HeaderProps {
   Icon?: LucideIcon;

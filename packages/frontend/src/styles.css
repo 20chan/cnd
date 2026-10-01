@@ -2,7 +2,7 @@
 @import "../../design/src/styles.css";
 @import "tailwindcss";
 
-@source "../node_modules/@cnd.sh/design/build/";
+@source "../node_modules/@cnd.sh/design/";
 
 * {
   box-sizing: border-box;

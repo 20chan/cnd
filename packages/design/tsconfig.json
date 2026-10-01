@@ -1,14 +1,7 @@
 {
-  "extends": "../typescript/tsconfig.react.json",
+  "extends": "../typescript/tsconfig.react.library.json",
   "compilerOptions": {
-    "declaration": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-    "paths": {
-      "#/*": ["./src/*"]
-    }
+    "noEmit": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.css"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.css"]
 }

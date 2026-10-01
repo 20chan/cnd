@@ -1,4 +1,4 @@
-import { cn } from '#/utils';
+import { cn } from '../utils';
 import { Header, type HeaderProps } from './Header';
 import { SideNav, type SideNavProps } from './SideNav';
 

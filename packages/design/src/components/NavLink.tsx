@@ -1,5 +1,5 @@
 import { Link, type LinkComponentProps } from '@tanstack/react-router';
-import { cn } from '#/utils';
+import { cn } from '../utils';
 
 export type NavLinkKind = 'none' | 'underline' | 'bold' | 'background';
 

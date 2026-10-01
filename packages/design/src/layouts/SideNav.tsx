@@ -1,6 +1,6 @@
 import { useLocation } from '@tanstack/react-router';
-import { NavLink, type NavLinkTo } from '#/components';
-import { cn } from '#/utils';
+import { NavLink, type NavLinkTo } from '../components';
+import { cn } from '../utils';
 
 export type NavItem = {
   name: string;
